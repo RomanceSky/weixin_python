@@ -5,7 +5,7 @@ import sae
 import web
 
 from weixinInterface import WeixinInterface
-from HTTP import reponse
+from django.http import HttpResponse
 reload(sys)
 sys.setdefaultencoding( "utf-8" )
 urls = (
@@ -18,7 +18,8 @@ render = web.template.render(templates_root)
 
 app = web.application(urls, globals()).wsgifunc()        
 application = sae.create_wsgi_app(app)
-response.content_type = 'content-type:text'
+# 1
+HttpResponse.content_type = 'content-type:text'
 
 
 #
