@@ -8,6 +8,9 @@ from weixinInterface import WeixinInterface
 
 reload(sys)
 sys.setdefaultencoding( "utf-8" )
+#TOKEN 到微信公众平台自己设置
+config={"TOKEN":'pyweinxintest',
+    "WEIXIN": 'weixin'}
 urls = (
 '/myseasite','WeixinInterface'
 )
@@ -19,7 +22,9 @@ render = web.template.render(templates_root)
 app = web.application(urls, globals()).wsgifunc()        
 application = sae.create_wsgi_app(app)
 
-
+print signature,timestamp,nonce 
+print tmpstr,hashstr 
+return 'Error' + echostr 
 
 #
 
