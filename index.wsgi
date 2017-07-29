@@ -1,4 +1,4 @@
-# utf-8
+#coding: utf-8
 
 import sae
 
@@ -6,10 +6,9 @@ import urlparse
 
 import xml.etree.ElementTree as ET
 
-#coding: utf-8
-import os
+import os, sys
 import hashlib
-
+ 
 import sae
 #需要的第三方库
 import web
