@@ -24,7 +24,7 @@ application = sae.create_wsgi_app(app)
 
 print signature,timestamp,nonce 
 print tmpstr,hashstr 
-return 'Error' + echostr 
+    return 'Error' + echostr 
 
 #
 
