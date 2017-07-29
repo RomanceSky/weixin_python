@@ -22,9 +22,7 @@ render = web.template.render(templates_root)
 app = web.application(urls, globals()).wsgifunc()        
 application = sae.create_wsgi_app(app)
 
-print signature,timestamp,nonce 
-print tmpstr,hashstr 
-    return 'Error' + echostr 
+
 
 #
 
