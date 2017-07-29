@@ -9,7 +9,7 @@ from weixinInterface import WeixinInterface
 reload(sys)
 sys.setdefaultencoding( "utf-8" )
 urls = (
-'/weixin','WeixinInterface'
+'/myseasite','WeixinInterface'
 )
 
 app_root = os.path.dirname(__file__)
