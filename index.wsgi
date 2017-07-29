@@ -18,7 +18,7 @@ render = web.template.render(templates_root)
 
 app = web.application(urls, globals()).wsgifunc()        
 application = sae.create_wsgi_app(app)
-
+response.content_type = 'content-type:text'
 
 
 #
