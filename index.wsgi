@@ -5,7 +5,7 @@ import sae
 import web
 
 from weixinInterface import WeixinInterface
-
+from HTTP import reponse
 reload(sys)
 sys.setdefaultencoding( "utf-8" )
 urls = (
