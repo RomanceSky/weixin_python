@@ -15,6 +15,8 @@ import sae
 import web
 from lxml import etree
 
+reload(sys)
+sys.setdefaultencoding( "utf-8" )
 #TOKEN 到微信公众平台自己设置
 config={
 	"WEIXIN": 'weixin'}
