@@ -37,7 +37,7 @@ class weixin:
         echostr = data.echostr
 
         #自己定义的 TOKEN
-        token = 'myseasite '
+        token = 'myseasite'
         
         #对微信发送的请求，做验证
         tmplist = [ token, timestamp, nonce ]
