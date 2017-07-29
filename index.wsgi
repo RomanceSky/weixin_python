@@ -8,11 +8,9 @@ from weixinInterface import WeixinInterface
 
 reload(sys)
 sys.setdefaultencoding( "utf-8" )
-#TOKEN 到微信公众平台自己设置
-config={"TOKEN":'pyweinxintest',
-    "WEIXIN": 'weixin'}
+
 urls = (
-'/myseasite','WeixinInterface'
+'/weixin','WeixinInterface'
 )
 
 app_root = os.path.dirname(__file__)
