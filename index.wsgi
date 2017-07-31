@@ -1,7 +1,7 @@
-#! python2
 #coding=utf-8
 
-html = '''True'''
+html = '''True
+'''
 
 
 
@@ -39,7 +39,7 @@ def app(data):
     return checksignatureresponse(pams)
 
 def get_str(data):
-    pattern = re.compile('&echostr=[\d]*&times')
+    pattern = re.compile('&echostr=[\d]*×')
     res = pattern.findall(data)
     return res[0]
 
@@ -65,8 +65,7 @@ Context-Type: text/html
 Server: Python-slp version 1.0
 Context-Length: '''
 
-# lisfd = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-lisfd = socket.socket(socket.AF_INET,SOCK_STREAM)
+lisfd = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 lisfd.bind((HOST, PORT))
 lisfd.listen(2)
 
@@ -97,6 +96,3 @@ else:
     print 'runflag#',runflag
 
 print 'Done'
-
-
-
