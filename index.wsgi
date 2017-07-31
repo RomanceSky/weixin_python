@@ -9,7 +9,7 @@ from django.http import HttpResponse
 reload(sys)
 sys.setdefaultencoding( "utf-8" )
 urls = (
-'/myseasite','WeixinInterface'
+'/weixin','WeixinInterface'
 )
  
 app_root = os.path.dirname(__file__)
