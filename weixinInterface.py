@@ -33,8 +33,6 @@ class WeixinInterface:
 
         #如果是来自微信的请求，则回复echostr
         if hashcode == signature:
-            
-            
             return echostr
        
         
