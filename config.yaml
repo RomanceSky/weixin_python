@@ -1,4 +1,7 @@
-libraries:
+- lname: qlife
+  version: 1
+  
+1ibraries:
 - name: webpy
   version: "0.36"
 
