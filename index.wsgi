@@ -1,17 +1,8 @@
 # -*- coding: utf-8 -*-
 # filename: main.py
-import web
-
-urls = (
-    '/wei', 'Handle',
-)
-
-class Handle(object):
-    def GET(self):
-        return "hello, this is a test"
-
-if __name__ == '__main__':
-    app = web.application(urls, globals())
-    app.run()
-    
-application = sae.create_wsgi_app(app)
+def sign(data):  
+    arr = [weChat['token'], data['timestamp'], data['nonce']]
+    arr = sorted(arr)
+    tempStr = ''.join(arr)
+    data = tempStr.encode('UTF-8')
+    return sha1(data).hexdigest()
