@@ -13,3 +13,5 @@ class Handle(object):
 if __name__ == '__main__':
     app = web.application(urls, globals())
     app.run()
+    
+application = sae.create_wsgi_app(app)
