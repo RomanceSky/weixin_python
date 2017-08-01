@@ -3,7 +3,7 @@
 import web
 
 urls = (
-    '/weixin', 'Handle',
+    '/wei', 'Handle',
 )
 
 class Handle(object):
