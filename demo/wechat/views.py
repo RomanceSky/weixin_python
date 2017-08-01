@@ -19,4 +19,20 @@ def wexin(request):
         if tmp_str == signature:
             return HttpResponse(echostr)
         else:
-            return HttpResponse("error")
+            return HttpResponse("error")#此处省略上面的那一段GET请求代码
+    else:
+        xml = request.body
+        msg = parse_message(xml)
+        if msg.type == 'text':
+            #获取文本内容
+            content = msg.content
+            try:
+                reply = TextReply(content=content,message=msg)
+                r_xml = reply.render()
+                # 获取唯一标记用户的openid，下文介绍获取用户信息会用到
+                openid = msg.source
+                return HttpResponse(r_xml)
+            except Exception as e:
+                #自行处理
+                pass
+        
