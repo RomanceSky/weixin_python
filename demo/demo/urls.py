@@ -17,5 +17,5 @@ from django.conf.urls import url
 from django.contrib import admin
 import wechat.views
 urlpatterns = [
-   url(r'^wechat/', views.wechat_home),
+   url(r'^wexin$',views.wexin,name='wexin'),
 ]
