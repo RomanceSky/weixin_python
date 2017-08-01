@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# filename: main.py
+# filename: 
 def sign(data):  
     arr = [weChat['token'], data['timestamp'], data['nonce']]
     arr = sorted(arr)
