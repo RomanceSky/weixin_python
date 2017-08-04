@@ -42,6 +42,22 @@ class WeixinInterface:
         msgType=xml.find("MsgType").text
         fromUser=xml.find("FromUserName").text
         toUser=xml.find("ToUserName").text
-        return self.render.reply_text(fromUser,toUser,int(time.time()),u"我现在还在开发中，还没有什么功能，您刚才说的是："+content)
+        
+        Nword = youdao(content)
+        return self.render.reply_text(fromUser,toUser,int(time.time()),Nword)
+       # return self.render.reply_text(fromUser,toUser,int(time.time()),u"我现在还在开发中，还没有什么功能，您刚才说的是："+content)
+    def youdao(word):
+        qword = urllib2.quote(word)
+        baseurl = r'http://fanyi.youdao.com/openapi.do?keyfrom=yourAppName&key=yourAppKey&type=data&doctype=json&version=1.1&q='
+        url = baseurl+qword
+    resp = urllib2.urlopen(url)
+    fanyi = json.loads(resp.read())
+	##根据json是否返回一个叫“basic”的key来判断是否翻译成功
+    if 'basic' in fanyi.keys():
+		##下面是你自已来组织格式
+    	trans = u'%s:\n%s\n%s\n网络释义：\n%s'%(fanyi['query'],''.join(fanyi['translation']),''.join(fanyi['basic']['explains']),''.join(fanyi['web'][0]['value']))
+    	return trans
+    else:
+        return u'对不起，您输入的单词%s无法翻译，请检查拼写'% word
 
  
