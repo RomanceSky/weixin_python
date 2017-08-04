@@ -1,12 +1,12 @@
 # coding: UTF-8
-importos
-importsae
-importweb
+import os
+import sae
+import web
  
-fromweixinInterfaceimportWeixinInterface
+from weixinInterface import WeixinInterface
  
 urls = (
-'/weixin','WeixinInterface'
+'/myseasite','WeixinInterface'
 )
  
 app_root = os.path.dirname(__file__)
@@ -15,7 +15,9 @@ render = web.template.render(templates_root)
  
 app = web.application(urls, globals()).wsgifunc()        
 application = sae.create_wsgi_app(app)
-# import sae
+
+"""
+import sae
 
 def app(environ, start_response):
     status = '200 OK'
@@ -24,3 +26,4 @@ def app(environ, start_response):
     return ['Hello, world!']
 
 application = sae.create_wsgi_app(app)
+"""
