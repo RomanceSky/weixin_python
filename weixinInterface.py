@@ -34,7 +34,7 @@ class WeixinInterface:
         if hashcode == signature:
             return echostr
     
-     def POST(self):        
+    def POST(self):        
         str_xml = web.data() #获得post来的数据
         xml = etree.fromstring(str_xml)#进行XML解析
         content=xml.find("Content").text#获得用户所输入的内容
