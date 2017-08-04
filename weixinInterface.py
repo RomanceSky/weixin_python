@@ -1,11 +1,11 @@
-# -*- coding: utf-8 -*-
+ #!/usr/bin/env python 
+ # -*- coding: utf-8 -*-
 import hashlib
 import web
 # import lxml
 import time
 import os
- 
- 
+
 class WeixinInterface:
  
     def __init__(self):
@@ -33,4 +33,10 @@ class WeixinInterface:
         #如果是来自微信的请求，则回复echostr
         if hashcode == signature:
             return echostr
+           
+   
+print "Content-Type: text/plain;charset=utf-8"  
+print  
+   
+print "Hello World!"
  
