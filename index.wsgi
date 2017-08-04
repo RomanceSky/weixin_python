@@ -3,7 +3,7 @@ import os
 import sae
 import web
  
-#from weixinInterface import WeixinInterface
+from weixinInterface import WeixinInterface
  
 #urls = (
 #'/myseasite','WeixinInterface'
@@ -20,4 +20,6 @@ def application(environ, start_response):
     status = '200 OK'
     response_headers = [('Content-type', 'text/plain')]
     start_response(status, response_headers)
-    return ['Hello, world!']
+    
+    interface = WeixinInterface()
+    return interface.GET()
