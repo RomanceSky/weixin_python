@@ -43,6 +43,6 @@ class WeixinInterface:
         toUser=xml.find("ToUserName").text
         return self.render.reply_text(fromUser,toUser,int(time.time()),u"我现在还在开发中，还没有什么功能，您刚才说的是："+content)
           
-   
+    print(web.config.debug = True)
 
  
