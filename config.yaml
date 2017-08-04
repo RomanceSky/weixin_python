@@ -1,5 +1,5 @@
 name: myseasite
-version: 1
+  version: 1
 libraries:
 - name: webpy
   version: "0.36"
