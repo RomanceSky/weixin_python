@@ -2,7 +2,6 @@
  # -*- coding: utf-8 -*-
 import hashlib
 import web
-# import lxml
 import time
 import os
 
