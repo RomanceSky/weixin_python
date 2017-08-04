@@ -3,7 +3,7 @@
 import hashlib
 import web
 # import lxml
-import time
+# import time
 import os
 
 class WeixinInterface:
