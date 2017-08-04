@@ -1,4 +1,4 @@
-- name: myseasite
+name: myseasite
 version: 1
 libraries:
 - name: webpy
