@@ -45,7 +45,8 @@ class WeixinInterface:
             if isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'text':
                 toUser = recMsg.FromUserName
                 fromUser = recMsg.ToUserName
-                content = "test"
+                #content = "test"
+                content = "欢迎关注俊的微信公众号，喜欢产品分析的可查阅相关文章"
                 replyMsg = reply.TextMsg(toUser, fromUser, content)
                 return replyMsg.send()
             else:
