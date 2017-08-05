@@ -4,7 +4,9 @@ import hashlib
 import web
 import time 
 import os
-
+# z增加的代码
+import reply
+import receive
 web.config.debug = True
 
 class WeixinInterface:
