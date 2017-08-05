@@ -62,14 +62,14 @@ class WeixinInterface:
         qword = urllib2.quote(word)
         baseurl = r'http://fanyi.youdao.com/openapi.do?keyfrom=yourAppName&key=yourAppKey&type=data&doctype=json&version=1.1&q='
         url = baseurl+qword
-    resp = urllib2.urlopen(url)
-    fanyi = json.loads(resp.read())
+        resp = urllib2.urlopen(url)
+        fanyi = json.loads(resp.read())
 	##根据json是否返回一个叫“basic”的key来判断是否翻译成功
-    if 'basic' in fanyi.keys():
+        if 'basic' in fanyi.keys():
 		##下面是你自已来组织格式
-    	trans = u'%s:\n%s\n%s\n网络释义：\n%s'%(fanyi['query'],''.join(fanyi['translation']),''.join(fanyi['basic']['explains']),''.join(fanyi['web'][0]['value']))
-    	return trans
-    else:
-        return u'对不起，您输入的单词%s无法翻译，请检查拼写'% word
+            trans = u'%s:\n%s\n%s\n网络释义：\n%s'%(fanyi['query'],''.join(fanyi['translation']),''.join(fanyi['basic']['explains']),''.join(fanyi['web'][0]['value']))
+            return trans
+        else:
+            return u'对不起，您输入的单词%s无法翻译，请检查拼写'% word
 
  
