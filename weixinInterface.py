@@ -46,8 +46,8 @@ class WeixinInterface:
         if type(content).__name__ == "unicode":
             content = content.encode('UTF-8')
             Nword = youdao(content)
-        return self.render.reply_text(fromUser,toUser,int(time.time()),Nword)
-       # return self.render.reply_text(fromUser,toUser,int(time.time()),u"我现在还在开发中，还没有什么功能，您刚才说的是："+content)
+       # return self.render.reply_text(fromUser,toUser,int(time.time()),Nword)
+         return self.render.reply_text(fromUser,toUser,int(time.time()),u"我现在还在开发中，还没有什么功能，您刚才说的是："+content)
     def youdao(word):
         qword = urllib2.quote(word)
         baseurl = r'http://fanyi.youdao.com/openapi.do?keyfrom=yourAppName&key=yourAppKey&type=data&doctype=json&version=1.1&q='
