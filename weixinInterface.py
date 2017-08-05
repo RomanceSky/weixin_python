@@ -7,6 +7,7 @@ import os
 # z增加的代码
 import reply
 import receive
+
 web.config.debug = True
 
 class WeixinInterface:
@@ -37,8 +38,8 @@ class WeixinInterface:
         if hashcode == signature:
             return echostr
     
-    def POST(self):
-        try:
+    #def POST(self):
+        #try:
             str_xml = web.data() #获得post来的数据
             xml = etree.fromstring(str_xml)#进行XML解析
             content=xml.find("Content").text#获得用户所输入的内容
@@ -46,20 +47,20 @@ class WeixinInterface:
             fromUser=xml.find("FromUserName").text
             toUser=xml.find("ToUserName").text
             # 1
-            recMsg = receive.parse_xml(webData)
-            if msgType == 'text':
-                content = xml.find("Content").text
+            #recMsg = receive.parse_xml(webData)
+            #if msgType == 'text':
+            #   content = xml.find("Content").text
                 
                  #if content == 'help': 
                 #    return self.render.reply_text(fromUser, toUser, int(time.time()), "随便看看？（对不起我功能有限QAQ）")
            
 
                     #return self.render.reply_text(fromUser, toUser, int(time.time()), "哎呀出错了 输入个help看看如何正确的调戏我？")
-            if msgType == 'event':
-                if xml.find("Event").text == 'subscribe':#关注的时候的欢迎语
-                    return self.render.reply_text(fromUser, toUser, int(time.time()), u"谢谢你的关注，输入help看看如何正确的调戏我")
-        except Exception, Argment:
-            return Argment
+            #if msgType == 'event':
+               # if xml.find("Event").text == 'subscribe':#关注的时候的欢迎语
+               #     return self.render.reply_text(fromUser, toUser, int(time.time()), u"谢谢你的关注，输入help看看如何正确的调戏我")
+       #except Exception, Argment:
+        #    return Argment
 
 '''
         if type(content).__name__ == "unicode":
