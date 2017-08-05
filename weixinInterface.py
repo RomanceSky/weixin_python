@@ -54,6 +54,7 @@ class WeixinInterface:
 
 
         if type(content).__name__ == "unicode":
+            content = xml.find('Content').text
             content = content.encode('UTF-8')
             Nword = youdao(content)
         return self.render.reply_text(fromUser,toUser,int(time.time()),Nword)
