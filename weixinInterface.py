@@ -77,7 +77,7 @@ except Exception, Argment:
 '''
         except Exception, Argment:
             return Argment
-            
+        '''    
         if type(content).__name__ == "unicode":
             content = xml.find('Content').text
             content = content.encode('UTF-8')
@@ -97,5 +97,5 @@ except Exception, Argment:
             return trans
         else:
             return u'对不起，您输入的单词%s无法翻译，请检查拼写'% word
-'''
- 
+
+ '''
