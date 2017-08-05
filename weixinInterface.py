@@ -47,8 +47,16 @@ class WeixinInterface:
             if content == 'help':
                 return self.render.reply_text(fromUser, toUser, int(time.time()), "随便看看？（对不起我功能有限QAQ）")
             else:
-                return self.render.reply_text(fromUser, toUser, int(time.t
-    
+                return self.render.reply_text(fromUser, toUser, int(time.time()), "哎呀出错了 输入个help看看如何正确的调戏我？")
+            if msgType == 'event':
+                if xml.find("Event").text == 'subscribe':#关注的时候的欢迎语
+                    return self.render.reply_text(fromUser, toUser, int(time.time()), u"谢谢你的关注，输入help看看如何正确的调戏我")
+
+作者：木子麦麦
+链接：http://www.jianshu.com/p/c81262593c88
+來源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。    
+                                                                   
         if type(content).__name__ == "unicode":
             content = content.encode('UTF-8')
             Nword = youdao(content)
