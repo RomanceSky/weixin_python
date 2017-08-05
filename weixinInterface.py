@@ -54,13 +54,14 @@ class WeixinInterface:
             else:
                 print "暂且不处理"
                 return "success"
-            except Exception, Argment:
-            return Argment
+      
 
                     #return self.render.reply_text(fromUser, toUser, int(time.time()), "哎呀出错了 输入个help看看如何正确的调戏我？")
             if msgType == 'event':
                 if xml.find("Event").text == 'subscribe':#关注的时候的欢迎语
                     return self.render.reply_text(fromUser, toUser, int(time.time()), u"谢谢你的关注，输入help看看如何正确的调戏我")
+        except Exception, Argment:
+            return Argment
 
 '''
         if type(content).__name__ == "unicode":
