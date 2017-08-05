@@ -37,9 +37,21 @@ class WeixinInterface:
         #如果是来自微信的请求，则回复echostr
         if hashcode == signature:
             return echostr
-    
-    #def POST(self):
-        #try:
+    def POST(self):
+        try:
+            webData = web.data()
+            print "Handle Post webdata is ", webData   #后台打日志
+            recMsg = receive.parse_xml(webData)
+            if isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'text':
+                toUser = recMsg.FromUserName
+                fromUser = recMsg.ToUserName
+                content = "test"
+                replyMsg = reply.TextMsg(toUser, fromUser, content)
+                return replyMsg.send()
+            else:
+                print "暂且不处理"
+                return "success"
+            '''
             str_xml = web.data() #获得post来的数据
             xml = etree.fromstring(str_xml)#进行XML解析
             content=xml.find("Content").text#获得用户所输入的内容
@@ -59,10 +71,13 @@ class WeixinInterface:
             #if msgType == 'event':
                # if xml.find("Event").text == 'subscribe':#关注的时候的欢迎语
                #     return self.render.reply_text(fromUser, toUser, int(time.time()), u"谢谢你的关注，输入help看看如何正确的调戏我")
-       #except Exception, Argment:
+except Exception, Argment:
         #    return Argment
 
 '''
+        except Exception, Argment:
+            return Argment
+            
         if type(content).__name__ == "unicode":
             content = xml.find('Content').text
             content = content.encode('UTF-8')
